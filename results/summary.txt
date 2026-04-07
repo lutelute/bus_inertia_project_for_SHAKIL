@@ -1,0 +1,141 @@
+System: IEEE 39-Bus New England (10 generators)
+Base MVA: 100.0 MVA, Nominal Frequency: 60.0 Hz
+
+--- Generator Data ---
+ Bus  Name   H (s)  S (MVA)  E_kin (MWs)
+----------------------------------------
+  30    G1    4.20      350       1470.0
+  31    G2    3.03      830       2514.9
+  32    G3    3.58      620       2219.6
+  33    G4    2.86      750       2145.0
+  34    G5    2.60      560       1456.0
+  35    G6    3.48      680       2366.4
+  36    G7    2.64      580       1531.2
+  37    G8    2.43      890       2162.7
+  38    G9    3.45     1040       3588.0
+  39   G10    5.00     1400       7000.0
+
+System Inertia (COI): H_sys = 3.436 s
+Total Kinetic Energy: E_kin = 26453.8 MWs
+Total Generation Capacity: S_total = 7700 MVA
+
+Building IEEE 39-bus network...
+  Buses: 39, Lines: 35, Transformers: 11
+  Admittance matrix: (39, 39), Impedance matrix: (39, 39)
+
+--- Bus Inertia Distribution (Top 10 highest / lowest) ---
+
+  Lowest inertia buses:
+    Bus  34: H_eff = 14.560 s (IDI = 4.238)
+    Bus  30: H_eff = 14.700 s (IDI = 4.279)
+    Bus  36: H_eff = 15.312 s (IDI = 4.457)
+    Bus  21: H_eff = 19.796 s (IDI = 5.762)
+    Bus  22: H_eff = 20.682 s (IDI = 6.020)
+    Bus  20: H_eff = 20.749 s (IDI = 6.039)
+    Bus  24: H_eff = 20.907 s (IDI = 6.085)
+    Bus  23: H_eff = 21.136 s (IDI = 6.152)
+    Bus  15: H_eff = 21.178 s (IDI = 6.164)
+    Bus  16: H_eff = 21.325 s (IDI = 6.207)
+
+  Highest inertia buses:
+    Bus  10: H_eff = 21.848 s (IDI = 6.359)
+    Bus  12: H_eff = 21.901 s (IDI = 6.375)
+    Bus   7: H_eff = 21.916 s (IDI = 6.379)
+    Bus   9: H_eff = 22.022 s (IDI = 6.410)
+    Bus  32: H_eff = 22.196 s (IDI = 6.461)
+    Bus  35: H_eff = 23.664 s (IDI = 6.888)
+    Bus   0: H_eff = 24.652 s (IDI = 7.175)
+    Bus   8: H_eff = 24.654 s (IDI = 7.176)
+    Bus  31: H_eff = 25.149 s (IDI = 7.320)
+    Bus  38: H_eff = 35.880 s (IDI = 10.444)
+
+--- Inertia-Weak Buses (bottom 25th percentile) ---
+  Bus  34: H_eff = 14.560 s
+  Bus  30: H_eff = 14.700 s
+  Bus  36: H_eff = 15.312 s
+  Bus  21: H_eff = 19.796 s
+  Bus  22: H_eff = 20.682 s
+  Bus  20: H_eff = 20.749 s
+  Bus  24: H_eff = 20.907 s
+  Bus  23: H_eff = 21.136 s
+  Bus  15: H_eff = 21.178 s
+  Bus  16: H_eff = 21.325 s
+
+Generating figures...
+
+--- Scenario: trip_G8 ---
+  Tripped generator at Bus 37, Power loss: 540 MW
+  H_sys = 3.436 s
+  RoCoF (analytical) = -0.6124 Hz/s
+  RoCoF (simulated)  = -0.6114 Hz/s
+  Frequency nadir    = 59.7884 Hz at t = 1.745 s
+  Steady-state dev   = -0.1913 Hz
+  RoCoF within limit (1.0 Hz/s): YES
+  Nadir within limit (59.5 Hz):  YES
+
+--- Scenario: trip_G10 ---
+  Tripped generator at Bus 39, Power loss: 1000 MW
+  H_sys = 3.436 s
+  RoCoF (analytical) = -1.1341 Hz/s
+  RoCoF (simulated)  = -1.1322 Hz/s
+  Frequency nadir    = 59.6081 Hz at t = 1.745 s
+  Steady-state dev   = -0.3542 Hz
+  RoCoF within limit (1.0 Hz/s): NO - VIOLATION
+  Nadir within limit (59.5 Hz):  YES
+
+--- Scenario: trip_G2 ---
+  Tripped generator at Bus 31, Power loss: 573 MW
+  H_sys = 3.436 s
+  RoCoF (analytical) = -0.6498 Hz/s
+  RoCoF (simulated)  = -0.6487 Hz/s
+  Frequency nadir    = 59.7755 Hz at t = 1.745 s
+  Steady-state dev   = -0.2030 Hz
+  RoCoF within limit (1.0 Hz/s): YES
+  Nadir within limit (59.5 Hz):  YES
+
+Disturbance: Trip G10 (Bus 39), 1000 MW loss
+
+ Pen.(%)  H_sys(s)  E_kin(MWs)  RoCoF(Hz/s)  Nadir(Hz)                       Replaced
+-------------------------------------------------------------------------------------
+      0%     3.436     26453.8      -1.1341    59.6081                               
+     20%     2.966     22835.1      -1.3138    59.5936                 G8_IBR, G5_IBR
+     40%     2.488     19158.9      -1.5659    59.5736 G8_IBR, G5_IBR, G7_IBR, G4_IBR
+     60%     1.682     12954.4      -2.3158    59.5191 G8_IBR, G5_IBR, G7_IBR, G4_IBR, G2_IBR, G3_IBR, G1_IBR
+     80%     1.375     10588.0      -2.8334    59.4857 G8_IBR, G5_IBR, G7_IBR, G4_IBR, G2_IBR, G3_IBR, G6_IBR, G1_IBR
+
+--- Penetration: 0%, Trip Bus 39 ---
+  COI frequency nadir: 55.2533 Hz
+  Active generators: 9
+
+--- Penetration: 40%, Trip Bus 39 ---
+  COI frequency nadir: 51.5168 Hz
+  Active generators: 5
+
+--- Penetration: 60%, Trip Bus 39 ---
+  COI frequency nadir: 42.6303 Hz
+  Active generators: 2
+
+Table 1 saved: results/table1_generator_data.csv
+ Bus Generator  H (s)  Rating (MVA)  E_kinetic (MWs)
+  30        G1   4.20           350           1470.0
+  31        G2   3.03           830           2514.9
+  32        G3   3.58           620           2219.6
+  33        G4   2.86           750           2145.0
+  34        G5   2.60           560           1456.0
+  35        G6   3.48           680           2366.4
+  36        G7   2.64           580           1531.2
+  37        G8   2.43           890           2162.7
+  38        G9   3.45          1040           3588.0
+  39       G10   5.00          1400           7000.0
+
+Table 2 saved: results/table2_penetration_results.csv
+ Penetration (%)  H_sys (s)  E_kin (MWs)  RoCoF (Hz/s)  Nadir (Hz)  Steady-State (Hz)            Replaced Generators
+             0.0      3.436      26453.8       -1.1341     59.6081            59.6458                               
+            20.0      2.966      22835.1       -1.3138     59.5936            59.6458                         G8, G5
+            40.0      2.488      19158.9       -1.5659     59.5736            59.6458                 G8, G5, G7, G4
+            60.0      1.682      12954.4       -2.3158     59.5191            59.6458     G8, G5, G7, G4, G2, G3, G1
+            80.0      1.375      10588.0       -2.8334     59.4857            59.6458 G8, G5, G7, G4, G2, G3, G6, G1
+
+Table 3 saved: results/table3_bus_inertia.csv
+
+Total computation time: 41.6 s
